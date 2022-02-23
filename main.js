@@ -6,7 +6,7 @@ function preload() {
 function setup() {
     canvas = createCanvas(300, 300);
     canvas.center();
-    canvas.background("red");
+  
     video = createCapture(VIDEO);
     video.hide();
     video.size(300, 300);
@@ -24,19 +24,21 @@ function modelLoaded() {
     console.log("success");
 
 }
-function gotResult(error, Result) {
+function gotResult(error, results) {
     if (error) {
-        console.log(error)
+        // console.log(error);
     
     }
 
     else {
-        if (Result.length > 0) {
+        if (results.length > 0) {
             // console.log(Result)
-            console.log("nose x= " + Result[0].pose.nose.x);
-            console.log("nose y= " + Result[0].pose.nose.y);
-            noseX=Result[0].pose.nose.x;
-            nosey=Result[0].pose.nose.y;
+            console.log("nose x= " + results[0].pose.nose.x);
+            console.log("nose y= " + results[0].pose.nose.y);
+            noseX=results[0].pose.nose.x;
+            nosey=results[0].pose.nose.y;
+            console.log(noseX);
+            console.log(nosey);
         }
 
 
